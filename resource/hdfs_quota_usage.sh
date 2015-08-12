@@ -8,7 +8,7 @@ NOW=`date +%Y%m%d%H%M%S`
 QUOTAPATH="${1}"
 OUTFILE="${2}.${NOW}"
 declare PHYUSAGE=0
-echo "PATH;SPACE_QUOTA;REMAINING_SPACE_QUOTA;USED_QUOTA" > $OUTFILE
+echo "PATH;SPACE_QUOTA;REMAINING_SPACE_QUOTA;USED_QUOTA(MB)" > $OUTFILE
 for i in `hdfs dfs -ls  ${QUOTAPATH}/|grep -e "${QUOTAPATH}"|grep -v grep|awk '{ print $8 }'`
 # e.g.: /user/b40
 # /user/b41
